@@ -8,7 +8,6 @@ mongoose.connect(keys.mongoURI);
 
 const app = express();
 require('./routes/authroutes')(app);
-
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);   
+app.listen(PORT);
 
