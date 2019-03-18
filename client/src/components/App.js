@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
 import Header from './Header';
+import "react-bulma-components/full";
+import { connect } from 'react-redux';
+import * as actions from '../Actions';
 
 
 const Landing = () => {
@@ -21,21 +24,29 @@ const SurveyNew = () => {
     )
 }
 
-const App = () => {
 
-    return (
-    <div>
+class App extends React.Component{
+
+componentDidMount(){
+    this.props.fetchUser();
+}
+
+render(){
+return (
+    <div className='container'>
         <BrowserRouter>
             <div>
-                 <Header />
+                <Header />
                 <Route exact path='/' component = {Landing} />
                 <Route exact path='/surveys' component = {Survey} />
                 <Route path='/surveys/new' component = {SurveyNew} />
             </div>
         </BrowserRouter>
     </div>
-    )
+     )
+    }
+
 
 }
 
-export default App;
+export default connect( null, actions)(App);
