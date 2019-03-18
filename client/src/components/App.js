@@ -4,13 +4,7 @@ import Header from './Header';
 import "react-bulma-components/full";
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
-
-
-const Landing = () => {
-    return(
-        <h1> Landing</h1>
-    )
-}
+import Landing from './Landing';
 
 const Survey = () => {
     return(

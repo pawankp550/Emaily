@@ -1,6 +1,7 @@
 import React from 'react';
 import $ from 'jquery';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Header extends React.Component{
     renderContent(){
@@ -10,7 +11,7 @@ class Header extends React.Component{
             case false :
                     return <a className="button is-primary" href="/auth/google"> Log In</a>;
             default :
-                    return <a className="button is-primary "> Log Out</a>;
+                    return <a className="button is-primary" href="/api/logout"> Log Out</a>;
         }
 
     }
@@ -21,9 +22,11 @@ class Header extends React.Component{
            <div>
                 <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <a className="navbar-item" >
-                           <h2> EMAILY </h2>
-                        </a>
+                        <Link className="navbar-item " 
+                            to={this.props.auth?'/surveys' : '/'}
+                        >
+                           <h2 className="button is-primary is-outlined"> EMAILY </h2>
+                        </Link>
 
                         <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                             <span aria-hidden="true"></span>
