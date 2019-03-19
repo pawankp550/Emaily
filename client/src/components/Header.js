@@ -2,6 +2,7 @@ import React from 'react';
 import $ from 'jquery';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Payments from './Payments';
 
 class Header extends React.Component{
     renderContent(){
@@ -9,9 +10,11 @@ class Header extends React.Component{
             case null :
                     return ;
             case false :
-                    return <a className="button is-primary" href="/auth/google"> Log In</a>;
+                    return <a className="button is-primary" href="/auth/google"> <span class="icon">
+                           <i class="fab fa-google"></i>
+                           </span>Log In</a>;
             default :
-                    return <a className="button is-primary" href="/api/logout"> Log Out</a>;
+                    return <div><Payments /> <a className="button is-primary" href="/api/logout"> Log Out</a></div>
         }
 
     }
@@ -22,10 +25,10 @@ class Header extends React.Component{
            <div>
                 <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <Link className="navbar-item " 
+                        <Link className="navbar-item "
                             to={this.props.auth?'/surveys' : '/'}
                         >
-                           <h2 className="button is-primary is-outlined"> EMAILY </h2>
+                           <h2 className="button is-primary is-outlined title is-4"> EMAILY </h2>
                         </Link>
 
                         <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -38,9 +41,9 @@ class Header extends React.Component{
                     <div id="navbarBasicExample" className="navbar-menu">
                         <div className="navbar-end">
                             <div className="navbar-item">
-                                <div className="buttons">
+                                  <div className="buttons">
                                     {this.renderContent()}
-                                </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
