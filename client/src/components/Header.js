@@ -14,7 +14,9 @@ class Header extends React.Component{
                            <i class="fab fa-google"></i>
                            </span>Log In</a>;
             default :
-                    return <div><Payments /> <a className="button is-primary" href="/api/logout"> Log Out</a></div>
+                    return <div><Payments /> <button className="button is-primary">Credits: {this.props.auth.credits}</button><a className="button is-primary" href="/api/logout"> Log Out</a>
+                            
+                    </div>
         }
 
     }
@@ -25,7 +27,7 @@ class Header extends React.Component{
            <div>
                 <nav className="navbar is-dark" role="navigation" aria-label="main navigation">
                     <div className="navbar-brand">
-                        <Link className="navbar-item "
+                        <Link className="navbar-item"
                             to={this.props.auth?'/surveys' : '/'}
                         >
                            <h2 className="button is-primary is-outlined title is-4"> EMAILY </h2>
