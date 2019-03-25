@@ -14,7 +14,7 @@ class Header extends React.Component{
                            <i class="fab fa-google"></i>
                            </span>Log In</a>;
             default :
-                    return <div><Payments /> <button className="button is-primary">Credits: {this.props.auth.credits}</button><a className="button is-primary" href="/api/logout"> Log Out</a>
+                    return <div> <button className="button is-primary is-outlined">Credits: {this.props.auth.credits}</button><Payments /> <a className="button is-primary" href="/api/logout"> Log Out</a>
                             
                     </div>
         }
