@@ -6,6 +6,7 @@ const passport = require('passport');
 const bodyParser = require('body-parser');
 
 require('./models/User');
+require('./models/Surveys');
 require('./Services/passport');
 
 mongoose.connect(keys.mongoURI, { useNewUrlParser: true });
@@ -26,6 +27,7 @@ app.use(passport.session());
 
 require('./routes/authroutes')(app);
 require('./routes/paymentroutes')(app);
+require('./routes/surveyroutes')(app); 
 
 if(process.env.NODE_ENV === 'production'){
     //Express will serve up production assets
@@ -37,8 +39,8 @@ if(process.env.NODE_ENV === 'production'){
     //if it doesn't recognise the route
     const path = require('path');
     app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));     
-    }); 
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    });
 }
 
 const PORT = process.env.PORT || 5000;

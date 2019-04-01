@@ -5,8 +5,8 @@ module.exports = {
     mongoURI:'mongodb+srv://p1:mongodb12345@emaily-dev-m5nw2.mongodb.net/test?retryWrites=true',
     cookieKey:'wjihfiwjfkslkflkslkflkslkflskflklskfjsfsnflskflkslfk',
     stripepublishableKey: 'pk_test_rE3dVbT6WVPiWqHFgRFBHYDS',
-    stripeSecretKey: 'sk_test_UiIl8emTXl3hcxVDYiL7Ex3Q'
-
+    stripeSecretKey: 'sk_test_UiIl8emTXl3hcxVDYiL7Ex3Q',
+    sendGridKey: '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'
 };
 //pawankp550 -> Emailyproj
 
