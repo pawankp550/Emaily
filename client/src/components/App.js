@@ -5,12 +5,9 @@ import "react-bulma-components/full";
 import { connect } from 'react-redux';
 import * as actions from '../Actions';
 import Landing from './Landing';
+import DashBoard from '../components/DashBoard';
+import '../App.css';
 
-const Survey = () => {
-    return(
-        <h1> Survey</h1>
-    )
-}
 
 const SurveyNew = () => {
     return(
@@ -32,7 +29,7 @@ return (
             <div>
                 <Header />
                 <Route exact path='/' component = {Landing} />
-                <Route exact path='/surveys' component = {Survey} />
+                <Route exact path='/surveys' component = {DashBoard} />
                 <Route path='/surveys/new' component = {SurveyNew} />
             </div>
         </BrowserRouter>
